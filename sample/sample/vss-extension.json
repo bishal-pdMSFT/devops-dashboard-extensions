@@ -1,0 +1,41 @@
+{
+  "manifestVersion": 1,
+  "id": "resource-section",
+  "version": "0.1.6",
+  "name": "Sample resource section extension for Ibiza dashboard",
+  "description": "Sample resource section extension for Ibiza dashboard",
+  "publisher": "pedev",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "contributions": [
+    {
+      "id": "resource-section.contribution1"
+    }
+  ],
+  "scopes": [
+    "vso.profile",
+    "vso.serviceendpoint_query",
+    "vso.work",
+    "vso.release"
+  ],
+  "files": [
+    {
+      "path": "ResourceSection.html",
+      "addressable": true
+    },
+    {
+      "path": "Scripts",
+      "addressable": true
+    },
+    {
+      "path": "lib",
+      "addressable": true
+    }
+  ]
+}
