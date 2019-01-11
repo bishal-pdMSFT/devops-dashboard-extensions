@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
-  "id": "resource-section",
-  "version": "0.1.6",
-  "name": "Sample resource section extension for Ibiza dashboard",
+  "id": "sample-dashboard-extension",
+  "version": "0.1.10",
+  "name": "[New] Sample resource section extension for Ibiza dashboard",
   "description": "Sample resource section extension for Ibiza dashboard",
   "publisher": "pedev",
   "targets": [
@@ -13,15 +13,8 @@
   "categories": [
     "Azure Pipelines"
   ],
-  "contributions": [
-    {
-      "id": "resource-section.contribution1"
-    }
-  ],
   "scopes": [
-    "vso.profile",
-    "vso.serviceendpoint_query",
-    "vso.work",
+    "vso.build",
     "vso.release"
   ],
   "files": [
@@ -37,5 +30,22 @@
       "path": "lib",
       "addressable": true
     }
+  ],
+  "contributions": [
+    {
+			"id": "sample-resource-section",
+			"type": "ms.vss-continuous-delivery-dashboard.devops-dashboard-azure-resource-section-type",
+			"targets": [
+				"ms.vss-continuous-delivery-dashboard.devops-dashboard-azure-resource-section"
+			],
+			"properties": {
+				"name": "Azure resource details",
+				"description": "Displays details of azure resource.",
+        "uri": "ResourceSection.html",
+        "resourceProviders": [
+          "appService"
+        ]
+			}
+		}
   ]
 }
