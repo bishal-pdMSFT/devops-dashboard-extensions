@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "sample-dashboard-extension",
-  "version": "0.1.10",
+  "version": "0.1.21",
   "name": "[New] Sample resource section extension for Ibiza dashboard",
   "description": "Sample resource section extension for Ibiza dashboard",
   "publisher": "pedev",
@@ -34,16 +34,19 @@
   "contributions": [
     {
 			"id": "sample-resource-section",
-			"type": "ms.vss-continuous-delivery-dashboard.devops-dashboard-azure-resource-section-type",
+			"type": "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section-type",
 			"targets": [
-				"ms.vss-continuous-delivery-dashboard.devops-dashboard-azure-resource-section"
+				"ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section"
 			],
 			"properties": {
 				"name": "Azure resource details",
 				"description": "Displays details of azure resource.",
         "uri": "ResourceSection.html",
         "resourceProviders": [
-          "appService"
+          { 
+            "name": "microsoft.devices",
+            "apiVersion": "2018-04-01"
+          }
         ]
 			}
 		}
