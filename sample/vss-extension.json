@@ -33,22 +33,22 @@
   ],
   "contributions": [
     {
-			"id": "sample-resource-section",
-			"type": "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section-type",
-			"targets": [
-				"ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section"
-			],
-			"properties": {
-				"name": "Azure resource details",
-				"description": "Displays details of azure resource.",
+      "id": "sample-resource-section",
+      "type": "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section-type",
+      "targets": [
+        "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section"
+      ],
+      "properties": {
+        "name": "Azure resource details",
+        "description": "Displays details of azure resource.",
         "uri": "ResourceSection.html",
         "resourceProviders": [
-          { 
+          {
             "name": "microsoft.devices",
             "apiVersion": "2018-04-01"
           }
         ]
-			}
-		}
+      }
+    }
   ]
 }
