@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "sample-dashboard-extension",
-  "version": "0.1.21",
+  "version": "0.1.41",
   "name": "[New] Sample resource section extension for Ibiza dashboard",
   "description": "Sample resource section extension for Ibiza dashboard",
   "publisher": "pedev",

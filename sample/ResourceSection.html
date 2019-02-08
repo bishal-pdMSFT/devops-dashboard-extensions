@@ -6,21 +6,19 @@
     <meta charset="utf-8" />
 </head>
 
-<body style="width:480px">
+<body style="width: 100%;background-color: lightblue;">
     <h1 class="fxs-frame-header" style="margin: 0;"></h1>
 
-    <p class="fxs-frame-content"></p>
-    <p class="fxs-frame-content2"></p>
-    <p class="fxs-frame-token"></p>
+    <p class="fxs-frame-resource-uri"></p>
+    <p class="fxs-frame-resource-name"></p>
+    <p class="fxs-frame-status"></p>
     <script src="lib/q-1.4.1.js"></script>
     <script src="lib/jquery-2.1.1.min.js"></script>
     <script src="lib/VSS.SDK.js"></script>
-    <script>var frameSignature = "FxFrameBlade";</script>
-    <script type="text/javascript">VSS.init({
-        usePlatformScripts: false,
-        usePlatformStyles: false,
-        explicitNotifyLoaded: true
-    });
+    <script type="text/javascript">
+        VSS.init({
+            explicitNotifyLoaded: true
+        });
     </script>
     <script src="Scripts/ResourceSection.js"></script>
 </body>
