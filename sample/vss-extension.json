@@ -1,10 +1,10 @@
 {
   "manifestVersion": 1,
-  "id": "sample-dashboard-extension",
+  "id": "sample-test-dashboard-extension",
   "version": "0.1.41",
   "name": "[New] Sample resource section extension for Ibiza dashboard",
   "description": "Sample resource section extension for Ibiza dashboard",
-  "publisher": "pedev",
+  "publisher": "jaminda",
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
@@ -44,7 +44,7 @@
         "uri": "ResourceSection.html",
         "resourceProviders": [
           {
-            "name": "microsoft.devices",
+            "name": "microsoft.devices1",
             "apiVersion": "2018-04-01"
           }
         ]
