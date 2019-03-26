@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" property="stylesheet" type="text/css" href="css/portal.css">
+    <link rel="stylesheet" property="stylesheet" type="text/css" href="css/Dashboard.css">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    
+        <div class="ext-dashboard-azure-resource-tile">
+            <div class="ext-main-header">
+                <div data-bind="text: dashboardAzureResourceHeader"></div>
+            </div>
+            <div data-bind="visible: isLoading()" style="width: 40px; margin: 0px auto;">
+                <icon params="iconContent:isLoadingSvg()"></icon>
+            </div>
+            <div data-bind="visible: !isLoading()">
+                <div class="ext-dashboard-error-container" data-bind="visible: errorMessage().length > 0">
+                    <div class="ext-dashboard-error-box">
+                        <div data-bind="text: errorMessage"></div>
+                    </div>
+                </div>
+                <div data-bind="visible: errorMessage().length == 0">                    
+                   <!-- ko if: showDashboardAzureResourceTile -->
+                    <div style="display: flex;">
+                        <div class="ext-dashboard-azure-resource-tile-description" style="width: 50%;">
+                            <div class="ext-dashboard-sub-header">
+                                <div data-bind="text: serviceHeader"></div>
+                            </div>
+                            <div style="display:flex">
+                                <div class="ext-dashboard-azure-resource-app-service-icon">
+                                    <icon params="iconContent: resourceTypeImage().iconContent(), iconTitle:resourceTypeImage().iconTitle()"></icon>
+                                </div>
+                                <a data-bind="click: onNameClick, text: name, attr:{'aria-label': nameAriaLabel}" class="ext-dashboard-azure-resource-app-service-anchor" aria-disabled="false" tabindex="0" href="#" target="_blank"></a>
+                            </div>
+                            <div style="display:flex">
+                                <div class="ext-dashboard-azure-resource-app-service-icon">
+                                    <icon params="iconContent:statusIcon().iconContent(), iconTitle:statusIcon().iconTitle()"></icon>
+                                </div>
+                                <div style="font-weight:bold; padding:10px;" data-bind="text: status"></div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    
+</body>
+
+</html>
+<script src="lib/q-1.4.1.js"></script>
+<script src="lib/knockout-3.4.0.js"></script>
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/VSS.SDK.js"></script>
+<script type="text/javascript">
+    VSS.init({
+        explicitNotifyLoaded: true
+    });
+</script>
+<script src="Scripts/ResourceSection.js"></script>
