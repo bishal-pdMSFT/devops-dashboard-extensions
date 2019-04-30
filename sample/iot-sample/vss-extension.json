@@ -1,0 +1,61 @@
+{
+    "manifestVersion": 1,
+    "id": "iot-dashboard-extension",
+    "version": "0.1.91",
+    "name": "Sample  IOT resource section extension for Ibiza dashboard",
+    "description": "Sample IOT resource section extension for Ibiza dashboard",
+    "publisher": "jaminda",
+    "targets": [
+      {
+        "id": "Microsoft.VisualStudio.Services"
+      }
+    ],
+    "categories": [
+      "Azure Pipelines"
+    ],
+    "scopes": [
+      "vso.build",
+      "vso.release",
+      "vso.serviceendpoint_query"
+    ],
+    "files": [
+      {
+        "path": "ResourceSection.html",
+        "addressable": true
+      },
+      {
+        "path": "Scripts",
+        "addressable": true
+      },
+      {
+        "path": "css",
+        "addressable": true
+      },
+      {
+        "path": "lib",
+        "addressable": true
+      }
+    ],
+    "contributions": [
+      {
+        "id": "sample-resource-section",
+        "type": "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section-type",
+        "targets": [
+          "ms.vss-continuous-delivery-gallery.devops-dashboard-azure-resource-section"
+        ],
+        "properties": {
+          "name": "Azure resource details",
+          "description": "Displays details of azure resource.",
+          "uri": "ResourceSection.html",
+          "resourceProviders": [
+            {
+              "name": "microsoft.compute,microsoft.devices",
+              "apiVersion": "2018-04-01"
+            }
+          ],
+          "useReusableResourceDeleteView": false
+        }
+      }
+    ]
+  }
+  
