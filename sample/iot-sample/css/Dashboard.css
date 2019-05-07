@@ -1,0 +1,416 @@
+﻿.ext-dashboard-ai-chart-legend-title {
+    font-size: 10px;
+    line-height: 10px;
+    text-align: left;
+    font-family: az_ea_font,"Segoe UI",wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    display: inline-block;
+    max-width: 115px;
+    vertical-align: top;
+}
+
+.triangle-up-right {
+    width: 0;
+    height: 0;
+    padding-left: 1.5%;
+    padding-top: 1.5%;
+    overflow: hidden;
+}
+
+.triangle-up-right:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -500px;
+    margin-top: -500px;
+    border-left: 500px solid transparent;
+    border-top: 500px solid #000;
+}
+
+#ai-tooltip-component-fail .tooltip-fail {
+    visibility: hidden;
+}
+
+#ai-tooltip-component-fail:hover .tooltip-fail {
+    visibility: visible;
+}
+
+#ai-tooltip-component-all .tooltip-all {
+    visibility: hidden;
+}
+
+#ai-tooltip-component-all:hover .tooltip-all {
+    visibility: visible;
+}
+
+.triangle-container {
+    display:flex;
+    flex-direction: row-reverse;
+
+}
+
+.tooltip-ai-chart-inner-container {
+    position: absolute;
+    min-width: 600px;
+    right: 5px;
+    bottom: 20px;
+}
+
+.tooltip-ai-chart-text {
+    padding: 5px 25px;
+    background: #000;
+    color: #FFF;
+}
+
+.cursor-pointer{
+    cursor:pointer;
+}
+
+.tooltip-ai-chart-outer-container {
+    position: relative;
+}
+
+.ext-dashboard-ai-chart-legend-container-base {
+    height: 50px;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+.ext-dashboard-ai-chart-legend-container-left {
+    border-left: 5px solid #00bcf2;
+    
+}
+
+.ext-dashboard-ai-chart-legend-container-right {
+    border-left: 5px solid #ec008c;
+    
+}
+
+.ext-dashboard-ai-chart-legend-value {
+    font-size: 40px;
+    line-height: 22px;
+    font-family: az_ea_font,"Segoe UI",wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -.025em;
+}
+
+.ext-dashboard {
+    background-color: #eee;
+    height: 100%;
+}
+
+.ext-dashboard-padding-color {
+    background-color: #eee !important;
+}
+
+.ext-dashboard-pipeline-container {
+    margin: 5px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(214, 214, 214);
+}
+
+.ext-dashboard-pipeline-container-body {
+    padding: 10px 25px 1px 25px;
+    display: flex;
+    align-items: center;
+    min-height: 150px;
+}
+
+.ext-dashboard-repository-tile {
+    position: relative;
+    height: auto;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.ext-dashboard-custom-button-rect {
+    width: 75px;
+    height: 22px;
+    border: 1px solid rgb(0, 88, 172);
+    color: rgb(0, 88, 172);
+    text-align: center;
+    margin: 0px 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ext-dashboard-right-position {
+    position: absolute;
+    right: 20px;
+}
+
+.ext-dashboard-link-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.ext-dashboard-custom-button-rect-text {
+    vertical-align: middle;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.ext-dashboard-view-icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5px;
+    font-size: 12px;
+}
+
+.ext-dashboard-repository-description {
+    margin: 30px 25px;
+    min-height: 85px;
+}
+
+.ext-dashboard-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 3px;
+}
+
+.ext-dashboard-repository-name {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.ext-dashboard-repository-commit-description {
+    font: italic 12px;
+    margin-left: 25px;
+}
+
+.ext-dashboard-azure-resource-tile,
+.ext-dashboard-azure-applicationinsight-tile
+{
+    position: relative;
+    height: auto;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+.ext-dashboard-azure-resource-tile-header {
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 20px 25px;
+}
+
+.ext-main-header {
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 20px 25px;
+}
+
+.ext-dashboard-azure-resource-tile-description {
+    padding: 15px 25px;
+}
+
+.ext-dashboard-azure-resource-app-service-icon {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+}
+
+.ext-dashboard-azure-resource-vm-connect-icon {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    padding: 0px 5px 0px 10px;
+}
+
+.ext-dashboard-azure-resource-app-service-anchor {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ext-dashboard-azure-resource-area {
+    margin-left: 10px;
+    width: 37%;
+    min-width: 550px;
+}
+
+.ext-dashboard-app-insight-area {
+    margin-left: 10px;
+    width: 37%;
+    min-width: 550px;
+}
+
+.ext-dashboard-error-box {
+    padding: 15px 10px;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+}
+
+.ext-dashboard-error-container {
+    padding: 20px 25px;
+    min-height: 150px;
+    display: flex;
+    align-items: center
+}
+
+.ext-dashboard-ai-error-container {
+    padding: 20px 25px;
+    min-height: 270px;
+    display: flex;
+    align-items: center
+}
+
+.ext-dashboard-sub-header {
+    padding-bottom: 10px;
+    display: flex;
+}
+
+.ext-dashboard-connect-button {
+    display: flex;
+    border-left: 1px solid rgb(211, 211, 211);
+    margin-left: 10px;
+}
+
+.ext-dashboard-connect-button-text{
+    color: #000;
+}
+
+.ext-mode-dark .ext-dashboard-connect-button-text {
+    color: #fff;
+}
+
+.ext-dashboard-connect-icon {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    padding: 0px 5px 0px 10px;
+}
+
+.ext-mode-dark .ext-dashboard-pipeline-container,
+.ext-mode-dark .ext-dashboard-repository-tile,
+.ext-mode-dark .ext-dashboard-azure-applicationinsight-tile,
+.ext-mode-dark .ext-dashboard-azure-resource-tile {
+    background: rgb(37, 37, 37);
+}
+
+.ext-mode-dark .ext-main-header,
+.ext-mode-dark .ext-dashboard-azure-resource-tile-header {
+    border-bottom: 1px solid rgb(48, 48, 48);
+}
+
+.ext-mode-dark .ext-dashboard-custom-button-rect,
+.ext-mode-dark .ext-dashboard-custom-button-rect-text {
+    border-color: rgb(86, 179, 255);
+    color: rgb(86, 179, 255);
+}
+
+.ext-mode-dark .ext-dashboard,
+.ext-mode-dark .ext-dashboard-padding-color {
+    background-color: rgb(48, 48, 48) !important;
+}
+
+.ext-mode-dark .ext-dashboard-error-box {
+    background-color: rgb(2, 2, 2);
+}
+
+.ext-mode-dark .ext-dashboard-connect-button {
+    border-left: 1px solid rgb(48, 48, 48);
+}
+
+.ext-dashboard-database-resource-release-block {
+    display: flex;
+    justify-content: flex-start;
+    padding: 13px 0px 0px 0px;
+    border-top: 1px solid rgb(234, 234, 234);
+}
+
+.ext-mode-dark .ext-dashboard-database-resource-release-block {
+    border-color: rgb(50, 50, 50);
+}
+
+.ext-dashboard-kubernetes-services {
+    display:flex; 
+    flex-direction: column; 
+    padding: 15px 25px; 
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.ext-dashboard-endpoint-url-truncuate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ext-dashboard-table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+    font-size: 12px;
+    text-align: left;
+}
+
+.ext-dashboard-table th {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.ext-dashboard-table th, td {
+    padding: 10px 0px 10px 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #bbb;
+}
+
+.ext-mode-dark .ext-dashboard-table th, .ext-mode-dark .ext-dashboard-table td {
+    border-bottom-color: #414141;
+}
+
+.ext-dashboard-table-cell {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.external-content-iframe {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.ext-mode-dark .highcharts-background {
+    fill: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+}
+
+.ext-mode-dark #container .highcharts-axis-labels text {
+    fill: #ccc !important;
+}
+
+.ext-mode-dark #container .highcharts-tick {
+    fill: #ccc !important;
+}
+
+.ext-mode-dark .highcharts-yaxis-grid .highcharts-grid-line {
+    stroke: #414141 !important;
+}
+
+.ext-mode-dark #container text {
+    fill: white;
+}
