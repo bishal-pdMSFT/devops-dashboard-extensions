@@ -52,13 +52,24 @@
 </body>
 
 </html>
-<script src="lib/q-1.4.1.js"></script>
-<script src="lib/knockout-3.4.0.js"></script>
-<script src="lib/jquery-2.1.1.min.js"></script>
-<script src="lib/VSS.SDK.js"></script>
+<script src="Scripts/lib/q-1.4.1.js"></script>
+<script src="Scripts/lib/knockout-3.4.0.js"></script>
+<script src="Scripts/lib/jquery-2.1.1.min.js"></script>
+<script src="Scripts/lib/require.js"></script>
+
 <script type="text/javascript">
-    VSS.init({
-        explicitNotifyLoaded: true
+    requirejs.config({
+        baseUrl: './node_modules',
+        paths: {
+            Scripts: '../Scripts'
+    }
     });
+    require(['azure-devops-extension-sdk/SDK'], function (SDK){
+        SDK.init({
+            loaded: false
+        });
+        window.SDK = SDK;
+        require(['Scripts/ResourceSection']);
+    });
+    
 </script>
-<script src="Scripts/ResourceSection.js"></script>

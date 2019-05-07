@@ -2,18 +2,18 @@
     "use strict";
     var viewModel;
     var initialConfig;
-
-    VSS.ready(function() {
-        
+    SDK.ready().then(() => {
         initialize();
-        VSS.register("resource-section", {
-            refresh: function () {
-                refresh(); 
-            }
+        SDK.register("resource-section", () => {
+            return {
+                refresh: function () {
+                    refresh(); 
+                }
+            };
         });
-        VSS.notifyLoadSucceeded();
+        SDK.notifyLoadSucceeded();
     });
-
+    
     function getStatusIcon(status) {
         var failedSvg= `<svg viewBox="0 0 9 9" class="fxs-portal-svg" role="presentation" focusable="false" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"><g><title></title><circle cx="4.5" cy="4.5" r="4.5" class="msportalfx-svg-c22"></circle><path d="M7 2.8L6.2 2 4.5 3.7 2.8 2l-.8.8 1.7 1.7L2 6.2l.8.8 1.7-1.7L6.2 7l.8-.8-1.7-1.7z" class="msportalfx-svg-c01"></path></g></svg>`;
         var inProgressSvg= `<svg viewBox="0 0 16 16" class="fxs-portal-svg" role="presentation" focusable="false" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"><g><title></title><circle cx="8" cy="8" r="8" class="msportalfx-svg-c19"></circle><path d="M7.747 3.18h-.054c-1.119 0-2.157.394-2.996 1.017L3 2.5v4.467h4.466L5.781 5.281a3.166 3.166 0 0 1 1.966-.661c1.676 0 3.066 1.179 3.358 2.72h1.474a4.88 4.88 0 0 0-4.832-4.16zM12.8 9.013H8.387l.022.012h-.022l1.633 1.633c-.554.388-1.215.595-1.966.595-1.512 0-2.799-1.022-3.239-2.4H3.269a4.887 4.887 0 0 0 4.784 3.84h.053c1.102 0 2.127-.38 2.961-.987l1.786 1.786V9.013H12.8z" class="msportalfx-svg-c01"></path></g></svg>`;
@@ -117,15 +117,15 @@
     }
 
     function initialize() {
-        initialConfig = VSS.getConfiguration();        
+        initialConfig = SDK.getConfiguration();        
         registerComponents();
         initialiseViewModel();
-        refresh();
+        refresh();       
     }
 
     function refresh(){
         viewModel.isLoading(true);
-        VSS.getAccessToken().then(function (result) {
+        SDK.getAccessToken().then(function (token) {
             var obj = {
                 method: "GET",
                 url: `https://vsrm.dev.azure.com/${initialConfig.orgName}/${initialConfig.projectId}/_apis/Release/definitions?definitionId=${initialConfig.releaseDefinitionId}`,
@@ -135,7 +135,7 @@
                 async: true,
                 cache:false,
                 beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", "Bearer " + result.token);
+                  xhr.setRequestHeader ("Authorization", "Bearer " + token);
                 },
                 success: getReleaseInformationSuccessHandler
             };
@@ -206,7 +206,7 @@
     function getReleaseInformationSuccessHandler(releaseDefinition){        
         var serviceEndpointId = getServiceEndpointId(releaseDefinition);
         var payload = getproxyDataSource(serviceEndpointId);  
-        VSS.getAccessToken().then(function (result) {
+        SDK.getAccessToken().then(function (token) {
   
           $.ajax
           ({
@@ -219,7 +219,7 @@
             cache:false,
             data:JSON.stringify(payload),
             beforeSend: function (xhr) {
-              xhr.setRequestHeader ("Authorization", "Bearer " + result.token);
+              xhr.setRequestHeader ("Authorization", "Bearer " + token);
               xhr.setRequestHeader ("Accept", "application/json;api-version=5.0-preview.1");
             },
             success: executeServiceEndpointRequestSuccessHandler
